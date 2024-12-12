@@ -147,36 +147,133 @@ img.add_border {
 <script src="./../cmsimde/static/brython.js"></script>
 <script src="./../cmsimde/static/brython_stdlib.js"></script>
 </p>
-<!-- 啟動 Brython -->
 <p>
 <script>
-window.onload=function(){
-brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+window.onload=function(){ 
+
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']}); 
+
 }
 </script>
 </p>
-<div id="brython_div"></div>
-<p>
-<script type="text/python">
+<div id="brython_div1"></div>
+<script type="text/python3">
 from browser import html
 from browser import document as doc
+import math
 
-# 利用 html 建立 canvas 超文件物件
-canvas = html.CANVAS(width=600, height=600)  # 調整畫布大小以容納圓形
+# 建立畫布
+canvas = html.CANVAS(width=500, height=500)
 brython_div = doc["brython_div1"]
 brython_div <= canvas
 
 ctx = canvas.getContext("2d")
-ctx.lineWidth = 1
-ctx.strokestyle = 'blue'
+ctx.lineWidth = 2  # 設定線條寬度
+
+# 設定變數
+square_size = 200  # 正方形邊長
+offset = 100  # 垂直偏移量
+x_offset = 100  # 水平偏移量
+
+# 計算中心和半徑
+first_square_center = (x_offset + square_size // 2, offset + square_size // 2)
+second_square_center = (x_offset + square_size, offset + square_size)
+circle_radius = square_size * math.sqrt(2) / 2
+
+# 填充區域函數
+def fill_shape(color, path_callback, exclusion_callback=None):
+    ctx.save()
+    if exclusion_callback:
+        ctx.beginPath()
+        exclusion_callback()
+        ctx.clip()
+    ctx.beginPath()
+    path_callback()
+    ctx.closePath()
+    ctx.fillStyle = color
+    ctx.fill()
+    ctx.restore()
+
+# --- 區域填色開始 ---
+
+# 1. 第一個正方形內部
+fill_shape(
+    "lightpink",
+    lambda: ctx.rect(x_offset, offset, square_size, square_size)
+)
+
+# 2. 第二個正方形內部
+fill_shape(
+    "lightgreen",
+    lambda: ctx.rect(first_square_center[0], first_square_center[1], square_size, square_size)
+)
+
+# 3. 第一個圓形（不排除正方形內部，先完整填色）
+fill_shape(
+    "lightblue",
+    lambda: ctx.arc(first_square_center[0], first_square_center[1], circle_radius, 0, 2 * math.pi)
+)
+
+# 4. 第二個圓形（不排除正方形內部，先完整填色）
+fill_shape(
+    "lightyellow",
+    lambda: ctx.arc(second_square_center[0], second_square_center[1], circle_radius, 0, 2 * math.pi)
+)
+
+# 5. 第一個正方形與第一個圓形交集部分（覆蓋重疊區域）
+fill_shape(
+    "purple",
+    lambda: ctx.rect(x_offset, offset, square_size, square_size),
+    lambda: ctx.arc(first_square_center[0], first_square_center[1], circle_radius, 0, 2 * math.pi)
+)
+
+# 6. 第二個正方形與第二個圓形交集部分
+fill_shape(
+    "orange",
+    lambda: ctx.rect(first_square_center[0], first_square_center[1], square_size, square_size),
+    lambda: ctx.arc(second_square_center[0], second_square_center[1], circle_radius, 0, 2 * math.pi)
+)
+
+# 7. 第一個圓形與第二個圓形交集部分
+fill_shape(
+    "lightcoral",
+    lambda: ctx.arc(first_square_center[0], first_square_center[1], circle_radius, 0, 2 * math.pi),
+    lambda: ctx.arc(second_square_center[0], second_square_center[1], circle_radius, 0, 2 * math.pi)
+)
+
+# 8. 第一個圓形、第二個正方形交疊部分
+fill_shape(
+    "cyan",
+    lambda: ctx.arc(first_square_center[0], first_square_center[1], circle_radius, 0, 2 * math.pi),
+    lambda: ctx.rect(first_square_center[0], first_square_center[1], square_size, square_size)
+)
+
+# --- 繪製圖形輪廓 ---
+ctx.strokeStyle = 'red'
 ctx.beginPath()
-ctx.moveTo(10,10)
-ctx.lineTo(100,100)
+ctx.rect(x_offset, offset, square_size, square_size)  # 第一個正方形
 ctx.stroke()
-</script>
-</p>
-<p><a href="https://mdecp2024.github.io/hw-41323135/content/Brython.html?src=https://gist.githubusercontent.com/41323135/4addcecb16dbbb71525318e50b74a29a/raw/8171cd9bb5983bd40d1c19b7921c3d195d975349/w13.py">程式連結</a></p>
-<p>// ]]&gt;</p><br />w12_hw << <a href='w12_hw.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
+
+ctx.beginPath()
+ctx.rect(first_square_center[0], first_square_center[1], square_size, square_size)  # 第二個正方形
+ctx.stroke()
+
+ctx.strokeStyle = 'black'
+ctx.beginPath()
+ctx.arc(first_square_center[0], first_square_center[1], circle_radius, 0, 2 * math.pi)  # 第一個圓
+ctx.stroke()
+
+ctx.beginPath()
+ctx.arc(second_square_center[0], second_square_center[1], circle_radius, 0, 2 * math.pi)  # 第二個圓
+ctx.stroke()
+
+# 9. 繪製斜線
+ctx.strokeStyle = 'blue'
+ctx.beginPath()
+ctx.moveTo(x_offset, offset)  # 左上角
+ctx.lineTo(x_offset + square_size, offset + square_size)  # 右下角
+ctx.stroke()
+</script><br />w12_hw << <a href='w12_hw.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
         
     <!-- footer -->
       <div class="container">
