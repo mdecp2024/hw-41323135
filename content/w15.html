@@ -130,7 +130,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='Attendance.html'>Attendance</a><li class='has-children'><a href='HW 1.html'>HW 1</a><ul class='dropdown'><li class='has-children'><a href='HW 1 Exam.html'>HW 1 Exam</a><ul class='dropdown'><li><a href='w10.html'>w10</a><li><a href='w7.html'>w7</a><li><a href='w11_hw.html'>w11_hw</a><li><a href='w12_hw.html'>w12_hw</a><li><a href='w13_hw.html'>w13_hw</a><li><a href='w14_ex.html'>w14_ex</a><li><a href='w15.html'>w15</a></li></li></ul></ul><li class='has-children'><a href='HW 2.html'>HW 2</a><ul class='dropdown'><li><a href='HW 2 Exam.html'>HW 2 Exam</a></li></ul><li class='has-children'><a href='HW 3.html'>HW 3</a><ul class='dropdown'><li><a href='HW 3 Exam.html'>HW 3 Exam</a></li></ul><li class='has-children'><a href='HW 4.html'>HW 4</a><ul class='dropdown'><li><a href='HW 4 Exam.html'>HW 4 Exam</a></li></ul><li><a href='Final Report.html'>Final Report</a><li><a href='Brython.html'>Brython</a></li>
+                     <li><a href='About.html'>About</a><li><a href='Attendance.html'>Attendance</a><li class='has-children'><a href='HW 1.html'>HW 1</a><ul class='dropdown'><li class='has-children'><a href='HW 1 Exam.html'>HW 1 Exam</a><ul class='dropdown'><li><a href='w10.html'>w10</a><li><a href='w7.html'>w7</a><li><a href='w11_hw.html'>w11_hw</a><li><a href='w12_hw.html'>w12_hw</a><li><a href='w13_hw-1.html'>w13_hw-1</a><li><a href='w13_hw-2.html'>w13_hw-2</a><li><a href='w14_ex.html'>w14_ex</a><li><a href='w15.html'>w15</a></li></li></ul></ul><li class='has-children'><a href='HW 2.html'>HW 2</a><ul class='dropdown'><li><a href='HW 2 Exam.html'>HW 2 Exam</a></li></ul><li class='has-children'><a href='HW 3.html'>HW 3</a><ul class='dropdown'><li><a href='HW 3 Exam.html'>HW 3 Exam</a></li></ul><li class='has-children'><a href='HW 4.html'>HW 4</a><ul class='dropdown'><li><a href='HW 4 Exam.html'>HW 4 Exam</a></li></ul><li><a href='Final Report.html'>Final Report</a><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -142,10 +142,89 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">w14_ex << <a href='w14_ex.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2<br /><h1>w15</h1>
-<p>題目一: 請利用 Gist 與 Brython 程式環境, 在個人的課程網站中新增一個頁面, 標題為 w15, 以"從 1 累加到 100"作為 anchor 的連結標題, 使用者點擊該連結之後, 可從各自的 Brython 頁面執行程式.</p>
-<p>題目二: 延伸上題, 設計一個函式 addto(1, 100), 可以完成上述的累加結果. (以"addto"作為連結標題)</p>
-<p>題目三: 延伸上題, 設計一個函式 add_only_even(1, 100), 可以完成從第一個輸入整數, 累加到第二個輸入變數的累加結果. 頁面中請以 <span>add_only_even 作為連結標題.</span></p>
-<p><span>題目四: 延伸上題, 設計一個函式 add_avoid_8(1, 100), 可以完成從第一個輸入整數, 累加到第二個輸入變數的累加過程, 必須避開數字出現"8"的整數, 頁面中請以 add_avoid_8 作為連結標題.</span></p><br />w14_ex << <a href='w14_ex.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
+<p>題目一: 請利用 Gist 與 Brython 程式環境, 在個人的課程網站中新增一個頁面, 標題為 w15, 以"從 1 累加到 100"</p>
+<p>anchor </p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">sum_result = 0 #建立變數sum_result
+i = 1 #指定i等於1
+while i &lt;= 100:     #使用while迴圈把i加到等於100
+    sum_result += i   
+    i += 1
+print(sum_result)</pre>
+<p>題目二: 延伸上題, 設計一個函式 addto(1, 100), 可以完成上述的累加結果.</p>
+<p>addto</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#運算程式
+def addto(start, end):   #定義函數addto
+    sum_result = 0       #設定數值sum_result=0
+    i = start            #設定i=start
+    while i &lt;= end:      #設結束之值為end
+        sum_result += i  
+        i += 1
+    return sum_result    #終止函數運行並返回數值至result
+      
+#調用程式
+result = addto(1, 100)   #設定起始值
+print(result)            #列印result</pre>
+<p>題目三: 延伸上題, 設計一個函式 add_only_even(1, 100), 可以完成從第一個輸入整數, 累加到第二個輸入變數的累加結果.</p>
+<p><span>add_only_even </span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def add_only_even(start, end):
+    """
+    計算從 start 到 end 之間所有偶數的總和
+ 
+    參數:
+    start (int): 起始數字
+    end (int): 結束數字
+ 
+    回傳:
+    int: 偶數的累加總和
+    """
+    # 使用 range 範圍產生器來選擇偶數
+    even_numbers = range(start + (1 if start % 2 != 0 else 0), end + 1, 2)
+     
+    # 返回偶數的總和
+    return sum(even_numbers)
+ 
+# 測試函式
+result = add_only_even(1, 100)
+print(f"從 1 累加到 100 的偶數總和是: {result}")</pre>
+<p><span>題目四: 延伸上題, 設計一個函式 add_avoid_8(1, 100), 可以完成從第一個輸入整數, 累加到第二個輸入變數的累加過程, 必須避開數字出現"8"的整數, </span></p>
+<p><span>add_avoid_8 </span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def addto(init, addto):
+    #init = 1
+    #addto = 100
+    sum=0
+    for i in range (init, addto+1):
+        #print (i)
+        sum += i
+    print(sum)
+ 
+def add_only_even(init, addto):
+    #init = 1
+    #addto = 100
+    sum = 0
+    for i in range(init+1, addto+1, 2):
+        #print (i)
+        sum += i
+        #print(sum)
+    print(sum)
+ 
+def avoid8(init, addto):
+    #init = 1
+    #addto = 100
+    sum = 0
+    for i in range(init, addto+1):
+        #print (i)
+        # 判斷數值中有沒有 8
+        if "8" in str(i):
+            pass
+        else:
+            sum += i
+            #print(i)
+        #print(sum)
+    print(sum)
+     
+#add_only_even(1, 100)
+avoid8(1, 100)</pre>
+<p><span></span></p><br />w14_ex << <a href='w14_ex.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
         
     <!-- footer -->
       <div class="container">
