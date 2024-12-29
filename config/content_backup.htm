@@ -748,6 +748,8 @@ ctx.stroke()  # 保留邊框線條
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 3 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
 <h3>w16_exam2</h3>
+<p><a href="https://mdecp2024.github.io/hw-41323135/content/Brython.html?src=https://gist.githubusercontent.com/41323135/3c2ea049b03e3ea86060ce076a6e8b49/raw/1be6afa90644f846feeed81e00cd11dc4740b106/%25E5%259C%259F%25E7%2582%25AE%25E8%25BF%25B7%25E5%25AE%25AE.py">迷宮圖</a></p>
+<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; bdeedf832270094506b4e66fa5f24da1db3e1783</p>
 <!-- 導入 brython 程式庫 -->
 <p>
 <script src="/static/brython.js"></script>
@@ -762,161 +764,120 @@ brython({debug:1, pythonpath:['/static/','./../downloads/py/']});
 }
 </script>
 </p>
-<p></p>
-<div></div>
+<div id="brython_div1"></div>
 <p>
 <script type="text/python3">
 from browser import html
 from browser import document as doc
 import math
 
-from browser import html
-from browser import document as doc
-
-# 建立 canvas 超文件物件
-canvas = html.CANVAS(width=600, height=600)
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width=600, height=600)  # 調整畫布大小以容納圓形
 brython_div = doc["brython_div1"]
 brython_div <= canvas
 
 ctx = canvas.getContext("2d")
 ctx.lineWidth = 2
 
-# 設定線條顏色為橙色
-ctx.strokeStyle = 'orange'
-
-# 設定填充顏色為橘色
-ctx.fillStyle = 'orange'  # 這裡設定填充顏色為橘色
-
-# 繪製原來的多邊形，並填充顏色
+ctx.strokeStyle = 'blue'  # 設定線顏色為藍色
 ctx.beginPath()
-ctx.moveTo(31, 35)  # 起點
-ctx.lineTo(61, 35)  # 第一條線
-ctx.lineTo(76, 61)  # 第二條線
-ctx.lineTo(61, 87)  # 第三條線
-ctx.lineTo(31, 87)  # 第四條線
-ctx.lineTo(16, 61)  # 第五條線
-ctx.lineTo(31, 35)  # 第六條線
-ctx.closePath()  # 關閉路徑，這樣我們的形狀就變成了封閉的多邊形
+ctx.moveTo(31, 35)  
+ctx.lineTo(231, 35)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
 
-# 填充顏色
-ctx.fill()  # 填充橘色
-
-# 繪製邊框 
-ctx.stroke()  # 保留邊框線條  
-
-# 繪製菱形 (綠色，並且變尖)
 ctx.beginPath()
-diamond_center_x = 120  # 菱形的中心X座標
-diamond_center_y = 61   # 菱形的中心Y座標
-diamond_vertical_size = 30  # 菱形的垂直邊長
-diamond_horizontal_size = 20  # 菱形的水平邊長 (變小，讓菱形更尖)
+ctx.moveTo(31, 35) 
+ctx.lineTo(31, 535)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
 
-# 計算菱形的四個頂點
-ctx.moveTo(diamond_center_x, diamond_center_y - diamond_vertical_size)  # 上頂點
-ctx.lineTo(diamond_center_x + diamond_horizontal_size, diamond_center_y)  # 右頂點
-ctx.lineTo(diamond_center_x, diamond_center_y + diamond_vertical_size)  # 下頂點
-ctx.lineTo(diamond_center_x - diamond_horizontal_size, diamond_center_y)  # 左頂點
-ctx.closePath()  # 關閉路徑
-
-# 填充菱形顏色
-ctx.fillStyle = 'TEAL'  # 設定填充顏色為綠色
-ctx.fill()  # 填充綠色
-
-# 繪製菱形邊框
-ctx.strokeStyle = 'teal'  # 設定邊框顏色為綠色
-ctx.stroke()  # 保留邊框線條
-
-# 繪製藍色正三角形
 ctx.beginPath()
+ctx.moveTo(331, 35) 
+ctx.lineTo(531, 35)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
 
-# 計算正三角形的三個頂點
-triangle_base_length = 30  # 正三角形的邊長
-triangle_height = (3 ** 0.5 / 2) * triangle_base_length  # 計算等邊三角形的高度
-
-# 右下方的位置
-triangle_x = diamond_center_x + diamond_horizontal_size + 5  # 菱形右側下方，稍微偏移
-triangle_y = diamond_center_y + diamond_vertical_size + 0  # 位置稍微向下
-
-# 設定三角形的三個頂點
-# 左邊底點
-ctx.moveTo(triangle_x - triangle_base_length / 2, triangle_y)
-# 右邊底點
-ctx.lineTo(triangle_x + triangle_base_length / 2, triangle_y)
-# 頂點
-ctx.lineTo(triangle_x, triangle_y - triangle_height)
-
-# 關閉路徑
-ctx.closePath()
-
-# 填充三角形顏色
-ctx.fillStyle = 'blue'  # 設定填充顏色為藍色
-ctx.fill()
-
-# 繪製三角形邊框
-ctx.strokeStyle = 'blue'  # 設定邊框顏色為藍色
-ctx.stroke()  # 保留邊框線條
-
-# 繪製桃紅色圓形
 ctx.beginPath()
+ctx.moveTo(531, 35) 
+ctx.lineTo(531, 535)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
 
-# 圓形的圓心位置
-circle_center_x = diamond_center_x + diamond_horizontal_size + 50  # 右邊偏移
-circle_center_y = diamond_center_y  # 與菱形的Y座標對齊
-
-# 圓形的半徑
-circle_radius = 30
-
-# 畫圓
-ctx.arc(circle_center_x, circle_center_y, circle_radius, 0, 2 * 3.1416)  # 0 到 2π 弧度
-
-# 填充顏色為桃紅色
-ctx.fillStyle = 'deeppink'  # 桃紅色
-ctx.fill()
-
-# 繪製圓形邊框
-ctx.strokeStyle = 'deeppink'  # 桃紅色邊框
-ctx.stroke()  # 保留邊框線條
-
-# 繪製正方形
 ctx.beginPath()
+ctx.moveTo(531, 535) 
+ctx.lineTo(331, 535)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
 
-# 計算正方形的左上角位置
-square_size = 50  # 正方形邊長為50
-square_x = circle_center_x + circle_radius + 10  # 放置於圓形的右邊
-square_y = circle_center_y - square_size / 2  # 正方形垂直居中於圓形
-
-# 繪製正方形
-ctx.rect(square_x, square_y, square_size, square_size)
-
-# 填充正方形顏色
-ctx.fillStyle = 'yellow'  # 正方形填充顏色為黃色
-ctx.fill()
-
-# 繪製正方形邊框
-ctx.strokeStyle = 'yellow'  # 正方形邊框顏色為黃色
-ctx.stroke()  # 保留邊框線條
-
-# 繪製深藍色長方形
 ctx.beginPath()
+ctx.moveTo(31, 535) 
+ctx.lineTo(231, 535)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
 
-# 長方形的尺寸
-rectangle_width = 60  # 長方形的長度
-rectangle_height = 20  # 長方形的高度
+ctx.beginPath()
+ctx.moveTo(231, 535) 
+ctx.lineTo(231, 435)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
 
-# 計算長方形的位置，將其放置在正方形的右側
-rectangle_x = square_x + square_size + 10  # 放置於正方形右邊，留有間距
-rectangle_y = square_y + (square_size - rectangle_height) / 2  # 垂直居中於正方形
+ctx.beginPath()
+ctx.moveTo(231, 435) 
+ctx.lineTo(331, 435)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
 
-# 繪製長方形
-ctx.rect(rectangle_x, rectangle_y, rectangle_width, rectangle_height)
+ctx.beginPath()
+ctx.moveTo(431, 535) 
+ctx.lineTo(431, 335)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
 
-# 填充長方形顏色
-ctx.fillStyle = 'darkblue'  # 長方形填充顏色為深藍色
-ctx.fill()
+ctx.beginPath()
+ctx.moveTo(431, 335) 
+ctx.lineTo(131, 335)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
 
-# 繪製長方形邊框
-ctx.strokeStyle = 'darkblue'  # 長方形邊框顏色為深藍色
-ctx.stroke()  # 保留邊框線條
+ctx.beginPath()
+ctx.moveTo(131, 335) 
+ctx.lineTo(131, 435)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(331, 335) 
+ctx.lineTo(331, 235)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(31, 235) 
+ctx.lineTo(231, 235)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(231, 235) 
+ctx.lineTo(231, 135)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(131, 135) 
+ctx.lineTo(431, 135)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(431, 135) 
+ctx.lineTo(431, 235)  
+ctx.stroke()
+# 使用紅色字體標示起始點
+ctx.fillStyle = 'red'  # 設定文字顏色為紅色
+ctx.font = '16px Arial'  # 設定文字大小及字型
+ctx.fillText("起始點 (31, 35)", 31, 35)  # 在座標 (31, 35) 處繪製文字
 </script>
 </p><h1>HW 4</h1>
 <h4>主題: 利用 Python 控制機電模擬系統 (20%)</h4>
