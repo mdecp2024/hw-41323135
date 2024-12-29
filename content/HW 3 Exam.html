@@ -130,7 +130,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='Attendance.html'>Attendance</a><li class='has-children'><a href='HW 1.html'>HW 1</a><ul class='dropdown'><li class='has-children'><a href='HW 1 Exam.html'>HW 1 Exam</a><ul class='dropdown'><li><a href='w10.html'>w10</a><li><a href='w7.html'>w7</a><li><a href='w11_hw.html'>w11_hw</a><li><a href='w12_hw.html'>w12_hw</a><li><a href='w13_hw.html'>w13_hw</a><li><a href='w14_ex.html'>w14_ex</a><li><a href='w15.html'>w15</a></li></li></ul></ul><li class='has-children'><a href='HW 2.html'>HW 2</a><ul class='dropdown'><li class='has-children'><a href='HW 2 Exam.html'>HW 2 Exam</a><ul class='dropdown'><li><a href='w16_exam1.html'>w16_exam1</a></li></li></ul></ul><li class='has-children'><a href='HW 3.html'>HW 3</a><ul class='dropdown'><li class='has-children'><a href='HW 3 Exam.html'>HW 3 Exam</a><ul class='dropdown'><li><a href='w16_exam2.html'>w16_exam2</a></li></li></ul></ul><li class='has-children'><a href='HW 4.html'>HW 4</a><ul class='dropdown'><li class='has-children'><a href='HW 4 Exam.html'>HW 4 Exam</a><ul class='dropdown'><li><a href='w16_exam3.html'>w16_exam3</a></li></li></ul></ul><li><a href='Final Report.html'>Final Report</a><li><a href='Brython.html'>Brython</a></li>
+                     <li><a href='About.html'>About</a><li><a href='Attendance.html'>Attendance</a><li class='has-children'><a href='HW 1.html'>HW 1</a><ul class='dropdown'><li class='has-children'><a href='HW 1 Exam.html'>HW 1 Exam</a><ul class='dropdown'><li><a href='w10.html'>w10</a><li><a href='w7.html'>w7</a><li><a href='w11_hw.html'>w11_hw</a><li><a href='w12_hw.html'>w12_hw</a><li><a href='w13_hw.html'>w13_hw</a><li><a href='w14_ex.html'>w14_ex</a><li><a href='w15.html'>w15</a></li></li></ul></ul><li class='has-children'><a href='HW 2.html'>HW 2</a><ul class='dropdown'><li class='has-children'><a href='HW 2 Exam.html'>HW 2 Exam</a><ul class='dropdown'><li><a href='w16_exam1-1.html'>w16_exam1-1</a></li></li></ul></ul><li class='has-children'><a href='HW 3.html'>HW 3</a><ul class='dropdown'><li><a href='w16_exam1-2.html'>w16_exam1-2</a><li><a href='HW 3 Exam.html'>HW 3 Exam</a></li></ul><li class='has-children'><a href='HW 4.html'>HW 4</a><ul class='dropdown'><li class='has-children'><a href='HW 4 Exam.html'>HW 4 Exam</a><ul class='dropdown'><li><a href='w16_exam3.html'>w16_exam3</a></li></li></ul></ul><li><a href='Final Report.html'>Final Report</a><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -141,10 +141,126 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">HW 3 << <a href='HW 3.html'>Previous</a> <a href='w16_exam2.html'>Next</a> >> w16_exam2<br /><h1>HW 3 Exam</h1>
+    <div id="tipue_search_content">w16_exam1-2 << <a href='w16_exam1-2.html'>Previous</a> <a href='HW 4.html'>Next</a> >> HW 4<br /><h1>HW 3 Exam</h1>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 3 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
-<br />HW 3 << <a href='HW 3.html'>Previous</a> <a href='w16_exam2.html'>Next</a> >> w16_exam2</div>
+<p><br/><br/><br/></p>
+<p>
+<script type="text/python3">
+from browser import html
+from browser import document as doc
+import math
+
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width=600, height=600)  # 調整畫布大小以容納圓形
+brython_div = doc["brython_div1"]
+brython_div <= canvas
+
+ctx = canvas.getContext("2d")
+ctx.lineWidth = 2
+
+ctx.strokeStyle = 'blue'  # 設定線顏色為藍色
+ctx.beginPath()
+ctx.moveTo(31, 35)  
+ctx.lineTo(231, 35)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(31, 35) 
+ctx.lineTo(31, 535)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(331, 35) 
+ctx.lineTo(531, 35)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(531, 35) 
+ctx.lineTo(531, 535)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(531, 535) 
+ctx.lineTo(331, 535)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(31, 535) 
+ctx.lineTo(231, 535)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(231, 535) 
+ctx.lineTo(231, 435)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(231, 435) 
+ctx.lineTo(331, 435)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(431, 535) 
+ctx.lineTo(431, 335)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(431, 335) 
+ctx.lineTo(131, 335)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(131, 335) 
+ctx.lineTo(131, 435)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(331, 335) 
+ctx.lineTo(331, 235)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(31, 235) 
+ctx.lineTo(231, 235)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(231, 235) 
+ctx.lineTo(231, 135)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(131, 135) 
+ctx.lineTo(431, 135)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(431, 135) 
+ctx.lineTo(431, 235)  
+ctx.stroke()
+# 使用紅色字體標示起始點
+ctx.fillStyle = 'red'  # 設定文字顏色為紅色
+ctx.font = '16px Arial'  # 設定文字大小及字型
+ctx.fillText("起始點 (31, 35)", 31, 35)  # 在座標 (31, 35) 處繪製文字
+</script>
+</p>
+<br />w16_exam1-2 << <a href='w16_exam1-2.html'>Previous</a> <a href='HW 4.html'>Next</a> >> HW 4</div>
         
     <!-- footer -->
       <div class="container">
