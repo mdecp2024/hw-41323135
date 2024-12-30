@@ -274,7 +274,23 @@ ctx.stroke()
 # 使用紅色字體標示起始點
 ctx.fillStyle = 'red'  # 設定文字顏色為紅色
 ctx.font = '16px Arial'  # 設定文字大小及字型
-ctx.fillText("起始點 (31, 35)", 31, 35)  # 在座標 (31, 35) 處繪製文字
+ctx.fillText("起始點 (31, 35)", 60, 50)  # 在座標 (31, 35) 處繪製文字
+ctx.fillStyle = 'black'  
+ctx.font = '16px Arial'  
+ctx.fillText("X", 50, 15)  
+ctx.fillStyle = 'black' 
+ctx.font = '16px Arial'  
+ctx.fillText("Y", 0, 50)
+ctx.strokeStyle = 'black'
+ctx.beginPath()
+ctx.moveTo(0, 0) 
+ctx.lineTo(50, 0)  
+ctx.stroke()
+ctx.strokeStyle = 'black'
+ctx.beginPath()
+ctx.moveTo(0, 0) 
+ctx.lineTo(0, 50)  
+ctx.stroke()
 </script>
 </p><br />HW 3 Exam << <a href='HW 3 Exam.html'>Previous</a> <a href='HW 4.html'>Next</a> >> HW 4</div>
         

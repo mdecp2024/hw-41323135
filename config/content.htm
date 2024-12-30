@@ -739,6 +739,25 @@ ctx.fill()
 # 繪製長方形邊框
 ctx.strokeStyle = 'darkblue'  # 長方形邊框顏色為深藍色
 ctx.stroke()  # 保留邊框線條
+ctx.fillStyle = 'red'  # 設定文字顏色為紅色
+ctx.font = '16px Arial'  # 設定文字大小及字型
+ctx.fillText("起始點 (31, 35)", 60, 15)  # 在座標 (60, 15) 處繪製文字
+ctx.fillStyle = 'black'  
+ctx.font = '16px Arial'  
+ctx.fillText("X", 50, 15)  
+ctx.fillStyle = 'black' 
+ctx.font = '16px Arial'  
+ctx.fillText("Y", 0, 50)
+ctx.strokeStyle = 'black'
+ctx.beginPath()
+ctx.moveTo(0, 0) 
+ctx.lineTo(50, 0)  
+ctx.stroke()
+ctx.strokeStyle = 'black'
+ctx.beginPath()
+ctx.moveTo(0, 0) 
+ctx.lineTo(0, 50)  
+ctx.stroke()
 </script>
 </p><h1>HW 3</h1>
 <h4>主題: Python 的數字、演算法與迴圈 (20%)</h4>
@@ -883,7 +902,23 @@ ctx.stroke()
 # 使用紅色字體標示起始點
 ctx.fillStyle = 'red'  # 設定文字顏色為紅色
 ctx.font = '16px Arial'  # 設定文字大小及字型
-ctx.fillText("起始點 (31, 35)", 31, 35)  # 在座標 (31, 35) 處繪製文字
+ctx.fillText("起始點 (31, 35)", 60, 50)  # 在座標 (31, 35) 處繪製文字
+ctx.fillStyle = 'black'  
+ctx.font = '16px Arial'  
+ctx.fillText("X", 50, 15)  
+ctx.fillStyle = 'black' 
+ctx.font = '16px Arial'  
+ctx.fillText("Y", 0, 50)
+ctx.strokeStyle = 'black'
+ctx.beginPath()
+ctx.moveTo(0, 0) 
+ctx.lineTo(50, 0)  
+ctx.stroke()
+ctx.strokeStyle = 'black'
+ctx.beginPath()
+ctx.moveTo(0, 0) 
+ctx.lineTo(0, 50)  
+ctx.stroke()
 </script>
 </p><h1>HW 4</h1>
 <h4>主題: 利用 Python 控制機電模擬系統 (20%)</h4>
@@ -934,8 +969,13 @@ ctx.lineWidth = 2
 # 使用紅色字體標示起始點
 ctx.fillStyle = 'red'  # 設定文字顏色為紅色
 ctx.font = '16px Arial'  # 設定文字大小及字型
-ctx.fillText("起始點 (31, 35)", 31, 35)  # 在座標 (31, 35) 處繪製文字
-
+ctx.fillText("起始點 (31, 35)", 60, 50)  # 在座標 (31, 35) 處繪製文字
+ctx.fillStyle = 'black'  
+ctx.font = '16px Arial'  
+ctx.fillText("X", 50, 15)  
+ctx.fillStyle = 'black' 
+ctx.font = '16px Arial'  
+ctx.fillText("Y", 0, 50) 
 ctx.strokeStyle = 'blue'  # 設定線顏色為藍色
 ctx.beginPath()
 ctx.moveTo(31, 35)  
@@ -1050,6 +1090,17 @@ ctx.strokeStyle = 'red'
 ctx.beginPath()
 ctx.moveTo(365, 352) 
 ctx.lineTo(310, 542)  
+ctx.stroke()
+ 
+ctx.strokeStyle = 'black'
+ctx.beginPath()
+ctx.moveTo(0, 0) 
+ctx.lineTo(50, 0)  
+ctx.stroke()
+ctx.strokeStyle = 'black'
+ctx.beginPath()
+ctx.moveTo(0, 0) 
+ctx.lineTo(0, 50)  
 ctx.stroke()
 </script>
 </p><h1>Final Report</h1>
