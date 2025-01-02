@@ -2,7 +2,7 @@
         <head>
         <title>cp_hw</title>
         <meta charset="utf-8">
-<meta property="head" content="H3">
+<meta property="head" content="H1">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
@@ -141,9 +141,156 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">HW 4 Exam << <a href='HW 4 Exam.html'>Previous</a> <a href='Final Report.html'>Next</a> >> Final Report<br /><h1>w16_exam3</h1>
-<p><span>題目三: 請以</span><span>自己的學號最後四碼</span><span>作為下列繪圖的左上方點座標, (例如: 若學號最後四碼為 3932, 請將 (39, 32) 作為繪圖左上方點座標), 並以紅色文字標示出該點座標 (例如: (39, 32)), 之後請利用 </span><span>pixel=2 的黑色直線</span><span>, </span><span>自訂迷宮畫布大小</span><span>, 直接在頁面畫出下列圖像, 並且</span><span>利用紅色連續線段標示從上方入口, 走至下方出口的路線圖</span><span>.</span></p>
-<p><a href="https://mdecp2024.github.io/hw-41323135/content/Brython.html?src=https://gist.githubusercontent.com/41323135/4c726da9474209a99169fe3a211e9219/raw/7b59662f22e2b38ca2b7d29e8fb8f360849b31bc/%25E8%25BF%25B7%25E5%25AE%25AE%25E5%258F%258A%25E8%25B7%25AF%25E5%25BE%2591.py">迷宮及通關路線</a></p>
+    <div id="tipue_search_content">About << <a href='About.html'>Previous</a> <a href='Attendance.html'>Next</a> >> Attendance<br /><h1>測試</h1>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;!-- 導入 brython 程式庫 --&gt;
+&lt;p&gt;
+&lt;script src="./../cmsimde/static/brython.js"&gt;&lt;/script&gt;
+&lt;script src="./../cmsimde/static/brython_stdlib.js"&gt;&lt;/script&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;script&gt;// &lt;![CDATA[
+window.onload=function(){ 
+
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']}); 
+
+}
+// ]]&gt;&lt;/script&gt;
+&lt;/p&gt;
+&lt;div id="brython_div1"&gt;&lt;/div&gt;
+&lt;p&gt;
+&lt;script type="text/python3"&gt;// &lt;![CDATA[
+from browser import html
+from browser import document as doc
+import math
+
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width=600, height=600)  # 調整畫布大小以容納圓形
+brython_div = doc["brython_div1"]
+brython_div &lt;= canvas
+
+ctx = canvas.getContext("2d")
+ctx.lineWidth = 2
+
+ctx.strokeStyle = 'blue'  # 設定線顏色為藍色
+ctx.beginPath()
+ctx.moveTo(31, 35)  
+ctx.lineTo(231, 35)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(31, 35) 
+ctx.lineTo(31, 535)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(331, 35) 
+ctx.lineTo(531, 35)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(531, 35) 
+ctx.lineTo(531, 535)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(531, 535) 
+ctx.lineTo(331, 535)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(31, 535) 
+ctx.lineTo(231, 535)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(231, 535) 
+ctx.lineTo(231, 435)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(231, 435) 
+ctx.lineTo(331, 435)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(431, 535) 
+ctx.lineTo(431, 335)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(431, 335) 
+ctx.lineTo(131, 335)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(131, 335) 
+ctx.lineTo(131, 435)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(331, 335) 
+ctx.lineTo(331, 235)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(31, 235) 
+ctx.lineTo(231, 235)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(231, 235) 
+ctx.lineTo(231, 135)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(131, 135) 
+ctx.lineTo(431, 135)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(431, 135) 
+ctx.lineTo(431, 235)  
+ctx.stroke()
+# 使用紅色字體標示起始點
+ctx.fillStyle = 'red'  # 設定文字顏色為紅色
+ctx.font = '16px Arial'  # 設定文字大小及字型
+ctx.fillText("起始點 (31, 35)", 60, 50)  # 在座標 (31, 35) 處繪製文字
+ctx.fillStyle = 'black'  
+ctx.font = '16px Arial'  
+ctx.fillText("X", 50, 15)  
+ctx.fillStyle = 'black' 
+ctx.font = '16px Arial'  
+ctx.fillText("Y", 0, 50)
+ctx.strokeStyle = 'black'
+ctx.beginPath()
+ctx.moveTo(0, 0) 
+ctx.lineTo(50, 0)  
+ctx.stroke()
+ctx.strokeStyle = 'black'
+ctx.beginPath()
+ctx.moveTo(0, 0) 
+ctx.lineTo(0, 50)  
+ctx.stroke()
+// ]]&gt;&lt;/script&gt;
+&lt;/p&gt;</pre>
 <p></p>
 <p></p>
 <p></p>
@@ -175,6 +322,102 @@ brython_div <= canvas
 
 ctx = canvas.getContext("2d")
 ctx.lineWidth = 2
+
+ctx.strokeStyle = 'blue'  # 設定線顏色為藍色
+ctx.beginPath()
+ctx.moveTo(31, 35)  
+ctx.lineTo(231, 35)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(31, 35) 
+ctx.lineTo(31, 535)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(331, 35) 
+ctx.lineTo(531, 35)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(531, 35) 
+ctx.lineTo(531, 535)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(531, 535) 
+ctx.lineTo(331, 535)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(31, 535) 
+ctx.lineTo(231, 535)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(231, 535) 
+ctx.lineTo(231, 435)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(231, 435) 
+ctx.lineTo(331, 435)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(431, 535) 
+ctx.lineTo(431, 335)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(431, 335) 
+ctx.lineTo(131, 335)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(131, 335) 
+ctx.lineTo(131, 435)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(331, 335) 
+ctx.lineTo(331, 235)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(31, 235) 
+ctx.lineTo(231, 235)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(231, 235) 
+ctx.lineTo(231, 135)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(131, 135) 
+ctx.lineTo(431, 135)  
+ctx.stroke()
+ctx.strokeStyle = 'blue'
+
+ctx.beginPath()
+ctx.moveTo(431, 135) 
+ctx.lineTo(431, 235)  
+ctx.stroke()
 # 使用紅色字體標示起始點
 ctx.fillStyle = 'red'  # 設定文字顏色為紅色
 ctx.font = '16px Arial'  # 設定文字大小及字型
@@ -184,123 +427,7 @@ ctx.font = '16px Arial'
 ctx.fillText("X", 50, 15)  
 ctx.fillStyle = 'black' 
 ctx.font = '16px Arial'  
-ctx.fillText("Y", 0, 50) 
-ctx.strokeStyle = 'blue'  # 設定線顏色為藍色
-ctx.beginPath()
-ctx.moveTo(31, 35)  
-ctx.lineTo(231, 35)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(31, 35) 
-ctx.lineTo(31, 535)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(331, 35) 
-ctx.lineTo(531, 35)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(531, 35) 
-ctx.lineTo(531, 535)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(531, 535) 
-ctx.lineTo(331, 535)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(31, 535) 
-ctx.lineTo(231, 535)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(231, 535) 
-ctx.lineTo(231, 435)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(231, 435) 
-ctx.lineTo(331, 435)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(431, 535) 
-ctx.lineTo(431, 335)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(431, 335) 
-ctx.lineTo(131, 335)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(131, 335) 
-ctx.lineTo(131, 435)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(331, 335) 
-ctx.lineTo(331, 235)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(31, 235) 
-ctx.lineTo(231, 235)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(231, 235) 
-ctx.lineTo(231, 135)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(131, 135) 
-ctx.lineTo(431, 135)  
-ctx.stroke()
-ctx.strokeStyle = 'blue'
-ctx.beginPath()
-ctx.moveTo(431, 135) 
-ctx.lineTo(431, 235)  
-ctx.stroke()
-ctx.strokeStyle = 'red'
-ctx.beginPath()
-ctx.moveTo(280, 27) 
-ctx.lineTo(515, 180)  
-ctx.stroke()
-ctx.strokeStyle = 'red'
-ctx.beginPath()
-ctx.moveTo(515, 180) 
-ctx.lineTo(414, 300)  
-ctx.stroke()
-ctx.strokeStyle = 'red'
-ctx.beginPath()
-ctx.moveTo(414, 300) 
-ctx.lineTo(332, 187)  
-ctx.stroke()
-ctx.strokeStyle = 'red'
-ctx.beginPath()
-ctx.moveTo(332, 187) 
-ctx.lineTo(72, 358)  
-ctx.stroke()
-ctx.strokeStyle = 'red'
-ctx.beginPath()
-ctx.moveTo(72, 358) 
-ctx.lineTo(72, 512)  
-ctx.stroke()
-ctx.strokeStyle = 'red'
-ctx.beginPath()
-ctx.moveTo(72, 512) 
-ctx.lineTo(365, 352)  
-ctx.stroke()
-ctx.strokeStyle = 'red'
-ctx.beginPath()
-ctx.moveTo(365, 352) 
-ctx.lineTo(310, 542)  
-ctx.stroke()
- 
+ctx.fillText("Y", 0, 50)
 ctx.strokeStyle = 'black'
 ctx.beginPath()
 ctx.moveTo(0, 0) 
@@ -312,9 +439,7 @@ ctx.moveTo(0, 0)
 ctx.lineTo(0, 50)  
 ctx.stroke()
 </script>
-</p>
-<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/xmD0lnQc4ho" width="560"></iframe>ee</p>
-<br />HW 4 Exam << <a href='HW 4 Exam.html'>Previous</a> <a href='Final Report.html'>Next</a> >> Final Report</div>
+</p><br />About << <a href='About.html'>Previous</a> <a href='Attendance.html'>Next</a> >> Attendance</div>
         
     <!-- footer -->
       <div class="container">
